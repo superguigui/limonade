@@ -1,3 +1,5 @@
+[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+
 # limonade
 Very minimal cli tool to generate sprite sheet for animations.
 
@@ -5,6 +7,7 @@ Very minimal cli tool to generate sprite sheet for animations.
 npm but not yet
 
 ## Usage
+From terminal
 ```bash
 Usage:
   limonade [input] [output]
