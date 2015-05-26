@@ -1,0 +1,25 @@
+{
+  "name": "limonade",
+  "version": "0.0.1",
+  "description": "Sprite animation generator",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "sprite",
+    "animation",
+    "generator"
+  ],
+  "author": "Guillaume Gouessan <guillaume.gouessan@gmail.com>",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "limonade": "index.js"
+  },
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "images": "^2.1.6",
+    "is-image": "^1.0.1",
+    "minimist": "^1.1.1"
+  }
+}
