@@ -1,7 +1,7 @@
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
 # limonade
-Very minimal cli tool to generate sprite sheets for animations.ƒ·
+Very minimal cli tool to generate sprite sheets for animations.
 
 ## Installation
 npm but not yet
