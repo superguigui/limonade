@@ -1,12 +1,31 @@
 # limonade
-minimal cli tool to generate sprite sheet for animations
+Very minimal cli tool to generate sprite sheet for animations.
 
 ## Installation
 npm but not yet
 
 ## Usage
 ```bash
-limonade [inputfolder] [outputfolder] [-f filename] [-a algorithm]
--f --filename        filename of the outputed image
--a --algorithm       algorithm to pack the spritesheet, can be square, horizontal or vertical
+Usage:
+  limonade [input] [output]
+
+Params:
+  input   input folder to be scanned for images
+  output  output folder where the spritesheet will be saved
+
+Options:
+  -h, --help        show help
+  -v, --version     show version
+  -f, --filename    name of the spritesheet without extension
+  -a, --algorithm   packing algorithm: `square`, `horizontal` or `vertical`
 ```
+
+## What it does
+* It will pack a bunch of images together ideally for animation
+* It will work with jpg, png of gifs
+* It always order the images alphanumerically.
+* It will only work if all images are the same size.
+
+## What it doesn't do
+* It won't try to fill the blanks
+* It doesn't generate css or json files.

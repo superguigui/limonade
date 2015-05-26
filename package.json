@@ -20,6 +20,7 @@
     "chalk": "^1.0.0",
     "images": "^2.1.6",
     "is-image": "^1.0.1",
+    "lodash.curry": "^3.0.1",
     "minimist": "^1.1.1"
   }
 }
