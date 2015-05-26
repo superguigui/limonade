@@ -2,6 +2,7 @@
 
 # limonade
 Very minimal cli tool to generate sprite sheets for animations.
+![Screenshot](./screenshot.png)
 
 ## Installation
 npm but not yet

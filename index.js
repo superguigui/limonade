@@ -89,6 +89,10 @@ function showVersion() {
   console.log(version);
 }
 
+function showError(msg) {
+  console.error(chalk.red(msg));
+}
+
 /* --------------------------------------------------------------------
   Start
 -------------------------------------------------------------------- */
@@ -97,6 +101,9 @@ if(isHelpNeeded) return showHelp();
 
 var outputPath = outputFolder + '/' + outputFilename + '.png';
 var files = collect(inputFolder, toImage(inputFolder));
+
+if(!files || !files.length) return showError('No images were found in \'' + chalk.white.underline(inputFolder) + '\'');
+
 var result = processFiles(files, algorithm);
 
 result.save(outputPath);
