@@ -32,6 +32,7 @@ var outputFilename = argv.f || argv.filename || 'sprite';
 var algorithm = argv.a || argv.algorithm || 'square';
 var isHelpNeeded = argv.h || argv.help || false;
 var isVersionRequested = argv.v || argv.version || false;
+var format = 'png';
 
 /* --------------------------------------------------------------------
   Some Methods (impures, need to be refactored to be moved to lib)
@@ -93,18 +94,40 @@ function showError(msg) {
   console.error(chalk.red(msg));
 }
 
+function fileDimensionsAreEquals(files) {
+  var currentDim;
+  var baseDim;
+  for (var i = 0, l = files.length; i < l; i++) {
+    currentDim = files[i].size();
+    if (baseDim && baseDim.width !== currentDim.width && baseDim.height !== currentDim.height) {
+      return false;
+    }
+    baseDim = currentDim;
+  }
+  return true;
+}
+
+function excludeFilename(files, filename) {
+  return files.filter(function(element) {
+    return element.filename !== filename;
+  });
+}
+
 /* --------------------------------------------------------------------
   Start
 -------------------------------------------------------------------- */
-if(isVersionRequested) return showVersion();
-if(isHelpNeeded) return showHelp();
+if (isVersionRequested) return showVersion();
+if (isHelpNeeded) return showHelp();
 
-var outputPath = outputFolder + '/' + outputFilename + '.png';
+var outputPath = outputFolder + '/' + outputFilename + '.' + format;
 var files = collect(inputFolder, toImage(inputFolder));
+files = excludeFilename(files, outputFilename + '.' + format);
 
-if(!files || !files.length) return showError('No images were found in \'' + chalk.white.underline(inputFolder) + '\'');
+if (!files || !files.length) return showError('No images were found in \'' + chalk.white.underline(inputFolder) + '\'. Exit');
+if (!fileDimensionsAreEquals(files)) return showError('The images in \'' + chalk.white.underline(inputFolder) + '\' don\'t all have the same dimensions. Exit.');
 
 var result = processFiles(files, algorithm);
+var resultSize = result.size();
 
 result.save(outputPath);
 
@@ -116,9 +139,9 @@ console.log(
   chalk.gray('just processed'),
   files.length,
   chalk.gray('images into a sprite of'),
-  result.size().width + 'px',
+  resultSize.width + 'px',
   chalk.gray('by'),
-  result.size().height + 'px',
+  resultSize.height + 'px',
   chalk.gray('with algorithm'),
   algorithm,
   chalk.gray('at'),
