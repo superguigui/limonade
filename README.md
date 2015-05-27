@@ -4,7 +4,9 @@
 Very minimal cli tool to generate sprite sheets for animations.
 
 ## Installation
-npm but not yet
+```bash
+npm install limonade -g
+```
 
 ## Usage
 From terminal or npm script.
@@ -21,6 +23,18 @@ Options:
   -v, --version     show version
   -f, --filename    name of the spritesheet without extension
   -a, --algorithm   packing algorithm: `square`, `horizontal` or `vertical`
+```
+
+## NPM scripts
+You can also make use of npm scripts and install a local version to tour project:
+```bash
+npm install limonade --save-dev
+````
+And in package.json:
+```json
+"scripts": {
+  "sprite": "limonade assets/images/sprites/mario assets/images/sprites -f mariosprite"
+}
 ```
 
 ## What it does
