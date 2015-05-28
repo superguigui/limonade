@@ -38,7 +38,7 @@ And in package.json:
 ```
 
 ## What it does
-* It will pack a bunch of images together ideally for animation.
+* It will pack a bunch of images together for animation purpose.
 * It will work with jpg, png of gifs.
 * It always order the images alphanumerically.
 * It will only work if all images are the same size.
