@@ -4,7 +4,9 @@
 Very minimal cli tool to generate sprite sheets for animations.
 
 ## Installation
-npm but not yet
+```bash
+npm install limonade -g
+```
 
 ## Usage
 From terminal or npm script.
@@ -23,8 +25,20 @@ Options:
   -a, --algorithm   packing algorithm: `square`, `horizontal` or `vertical`
 ```
 
+## NPM scripts
+You can also make use of npm scripts and install a local version to tour project:
+```bash
+npm install limonade --save-dev
+````
+And in package.json:
+```json
+"scripts": {
+  "sprite": "limonade assets/images/sprites/mario assets/images/sprites -f mariosprite"
+}
+```
+
 ## What it does
-* It will pack a bunch of images together ideally for animation.
+* It will pack a bunch of images together for animation purpose.
 * It will work with jpg, png of gifs.
 * It always order the images alphanumerically.
 * It will only work if all images are the same size.
