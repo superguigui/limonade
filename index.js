@@ -50,7 +50,7 @@ function processFiles(files, algorithm) {
     break;
     case 'square':
     default: 
-      return pack(files, Math.ceil(nbImagesSqrt), Math.floor(nbImagesSqrt));
+      return pack(files, Math.ceil(nbImagesSqrt), Math.round(nbImagesSqrt));
     break;
   }
 }
