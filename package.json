@@ -1,6 +1,6 @@
 {
   "name": "limonade",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Sprite animation generator",
   "scripts": {
     "test": ""
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "chalk": "^1.0.0",
-    "images": "^2.1.6",
+    "images": "3.0.0",
     "is-image": "^1.0.1",
     "lodash.curry": "^3.0.1",
     "minimist": "^1.1.1"
